@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados de consulta</title>
+</head>
+<body>
+    <h1>Resultados de consulta para la ciudad {{ ciudad }}</h1>
+    {% if resultados %}
+        <ul>
+            {% for resultado in resultados %}
+                <li>Fecha: {{ resultado[0] }}, Temperatura: {{ resultado[1] }}, Probabilidad de lluvia: {{ resultado[2] }}%</li>
+            {% endfor %}
+        </ul>
+        {% for resultado in resultados %}
+            {% if resultado[2] > 70 %}
+                <p>Lleve paraguas</p>
+            {% endif %}
+            {% if resultado[1] < 10 %}
+                <p>Abríguese antes de salir</p>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <p>No se encontraron resultados para la ciudad {{ ciudad }}</p>
+    {% endif %}
+</body>
+</html>
