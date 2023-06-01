@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Consulta por Probabilidad de Lluvia</h2>
+<p>Ciudad:</p>
+<p>Probabilidad: {{ probabilidad }}%</p>
+
+<h3>Resultados:</h3>
+{% if registros %}
+<ul>
+  {% for registro in registros %}
+  <li>Fecha: {{ registro['Fecha'] }}, Ciudad: {{ registro['Ciudad'] }}, Probabilidad de lluvia: {{ registro['Probabilidad de lluvia'] }}%</li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No se encontraron registros que cumplan con los criterios de búsqueda.</p>
+{% endif %}
+
+{% if ciudad_max_probabilidad %}
+<p>La ciudad {{ ciudad_max_probabilidad }} tiene la máxima probabilidad de lluvia: 100%</p>
+{% endif %}
+{% endblock %}
