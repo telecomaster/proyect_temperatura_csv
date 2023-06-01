@@ -25,4 +25,4 @@ def consulta():
     
     return render_template('consulta.html', ciudad=ciudad, resultados=resultados)
 if __name__ == '__main__':
-    app.run()
+   app.run(host= "0.0.0.0", port=5000)
