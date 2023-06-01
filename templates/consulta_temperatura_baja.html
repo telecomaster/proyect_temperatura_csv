@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Consulta por Temperatura Baja</h2>
+
+{% if ciudad_temperatura_minima %}
+<p>La ciudad con la temperatura más baja es: {{ ciudad_temperatura_minima }}</p>
+<p>Temperatura mínima: {{ temperatura_minima }}°C</p>
+<p>Fecha de la temperatura mínima: {{ fecha_temperatura_minima }}</p>
+{% else %}
+<p>No se encontraron registros para realizar la consulta.</p>
+{% endif %}
+{% endblock %}
