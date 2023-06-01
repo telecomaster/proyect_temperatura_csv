@@ -10,5 +10,19 @@
         <input type="text" name="ciudad" required>
         <input type="submit" value="Consultar">
     </form>
+    <h3>Consulta por Probabilidad de Lluvia</h3>
+<form action="/consulta_probabilidad" method="GET">
+  <label for="probabilidad">Probabilidad de lluvia:</label>
+  <input type="number" id="probabilidad" name="probabilidad" min="0" max="100">
+  <input type="submit" value="Consultar">
+</form>
+
+<h3>Consulta por Temperatura Baja</h3>
+<form action="/consulta_temperatura_baja" method="GET">
+  <input type="submit" value="Consultar">
+</form>
+
+
+
 </body>
 </html>
